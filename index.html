@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Treino - Academia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Meu Treino">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>💪 Meu Treino</h1>
+            <div class="day-selector">
+                <button class="day-btn active" data-day="segunda">Seg</button>
+                <button class="day-btn" data-day="quarta">Qua</button>
+                <button class="day-btn" data-day="sexta">Sex</button>
+            </div>
+        </header>
+
+        <!-- Treino Atual -->
+        <section class="current-workout">
+            <div class="workout-header">
+                <h2 id="workout-title">Treino 1</h2>
+                <p id="workout-focus">Pernas e Joelho (Força + Estabilidade)</p>
+            </div>
+            
+            <div class="progress-summary">
+                <div class="progress-item">
+                    <span>Exercícios:</span>
+                    <span id="total-exercises">0/9</span>
+                </div>
+                <div class="progress-item">
+                    <span>Concluídos:</span>
+                    <span id="completed-exercises">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Exercícios -->
+        <section class="exercises-list" id="exercises-list">
+            <!-- Exercícios serão inseridos aqui via JavaScript -->
+        </section>
+
+        <!-- Botão de Finalizar Treino -->
+        <button class="finish-workout-btn" id="finish-workout" style="display: none;">
+            ✅ Finalizar Treino
+        </button>
+
+        <!-- Modal para Registrar Peso -->
+        <div class="modal" id="weight-modal">
+            <div class="modal-content">
+                <h3>Registrar Peso</h3>
+                <div class="weight-input">
+                    <label for="weight-value">Peso (kg):</label>
+                    <input type="number" id="weight-value" placeholder="Ex: 50" step="0.5" min="0">
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn-secondary" id="cancel-weight">Cancelar</button>
+                    <button class="btn-primary" id="save-weight">Salvar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Ver Vídeo -->
+        <div class="modal" id="video-modal">
+            <div class="modal-content video-content">
+                <div class="video-header">
+                    <h3 id="video-title">Exercício</h3>
+                    <button class="close-video" id="close-video">✕</button>
+                </div>
+                <div class="video-container">
+                    <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
