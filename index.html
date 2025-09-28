@@ -3,84 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Treino - Academia</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="description" content="App de treino para academia - Acompanhe seus exercícios">
+    
+    <!-- PWA Configuration -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2196F3">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Meu Treino">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Treino App">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="data/treinoJana.json" as="fetch" crossorigin>
+    <link rel="preload" href="data/treinoLeandro.json" as="fetch" crossorigin>
+    
+    <title>Treino App</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1>💪 Meu Treino</h1>
-            <div class="day-selector">
-                <button class="day-btn active" data-day="segunda">Seg</button>
-                <button class="day-btn" data-day="quarta">Qua</button>
-                <button class="day-btn" data-day="sexta">Sex</button>
+    <div class="app-container">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loader">
+                <div class="loader-circle"></div>
+                <p>Carregando treinos...</p>
             </div>
+        </div>
+
+        <!-- Navigation Header -->
+        <header class="app-header" id="app-header" style="display: none;">
+            <button class="back-button" id="back-button" aria-label="Voltar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h1 class="app-title" id="app-title">Treino App</h1>
+            <button class="menu-button" id="menu-button" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </header>
 
-        <!-- Treino Atual -->
-        <section class="current-workout">
-            <div class="workout-header">
-                <h2 id="workout-title">Treino 1</h2>
-                <p id="workout-focus">Pernas e Joelho (Força + Estabilidade)</p>
-            </div>
+        <!-- Main Content -->
+        <main class="app-main" id="app-main">
             
-            <div class="progress-summary">
-                <div class="progress-item">
-                    <span>Exercícios:</span>
-                    <span id="total-exercises">0/9</span>
-                </div>
-                <div class="progress-item">
-                    <span>Concluídos:</span>
-                    <span id="completed-exercises">0</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lista de Exercícios -->
-        <section class="exercises-list" id="exercises-list">
-            <!-- Exercícios serão inseridos aqui via JavaScript -->
-        </section>
-
-        <!-- Botão de Finalizar Treino -->
-        <button class="finish-workout-btn" id="finish-workout" style="display: none;">
-            ✅ Finalizar Treino
-        </button>
-
-        <!-- Modal para Registrar Peso -->
-        <div class="modal" id="weight-modal">
-            <div class="modal-content">
-                <h3>Registrar Peso</h3>
-                <div class="weight-input">
-                    <label for="weight-value">Peso (kg):</label>
-                    <input type="number" id="weight-value" placeholder="Ex: 50" step="0.5" min="0">
-                </div>
-                <div class="modal-buttons">
-                    <button class="btn-secondary" id="cancel-weight">Cancelar</button>
-                    <button class="btn-primary" id="save-weight">Salvar</button>
+            <!-- User Selection Screen -->
+            <div class="screen user-selection-screen" id="user-selection-screen">
+                <div class="screen-content">
+                    <div class="welcome-section">
+                        <h2>Bem-vindo ao Treino App</h2>
+                        <p>Escolha seu perfil para começar:</p>
+                    </div>
+                    
+                    <div class="user-cards">
+                        <button class="user-card" data-user="jana">
+                            <div class="user-avatar">
+                                <span>J</span>
+                            </div>
+                            <h3>Jana</h3>
+                            <p>Pernas, Superiores, Posterior & Core</p>
+                        </button>
+                        
+                        <button class="user-card" data-user="leandro">
+                            <div class="user-avatar">
+                                <span>L</span>
+                            </div>
+                            <h3>Leandro</h3>
+                            <p>Peito, Pernas, Costas & Full Body</p>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Modal para Ver Vídeo -->
-        <div class="modal" id="video-modal">
-            <div class="modal-content video-content">
-                <div class="video-header">
-                    <h3 id="video-title">Exercício</h3>
-                    <button class="close-video" id="close-video">✕</button>
-                </div>
-                <div class="video-container">
-                    <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+            <!-- Workout Selection Screen -->
+            <div class="screen workout-selection-screen" id="workout-selection-screen" style="display: none;">
+                <div class="screen-content">
+                    <div class="user-info">
+                        <div class="current-user-avatar">
+                            <span id="current-user-initial"></span>
+                        </div>
+                        <div class="user-details">
+                            <h2 id="current-user-name"></h2>
+                            <p id="current-user-schedule"></p>
+                        </div>
+                    </div>
+
+                    <div class="workout-tabs" id="workout-tabs">
+                        <!-- Workout tabs will be generated dynamically -->
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <!-- Exercise Screen -->
+            <div class="screen exercise-screen" id="exercise-screen" style="display: none;">
+                <div class="screen-content">
+                    <div class="workout-header">
+                        <h2 id="current-workout-title"></h2>
+                        <div class="workout-stats">
+                            <span id="total-exercises">8 exercícios</span>
+                        </div>
+                    </div>
+
+                    <div class="exercises-list" id="exercises-list">
+                        <!-- All exercises will be shown as a list -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timer Modal -->
+            <div class="modal timer-modal" id="timer-modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="timer-display">
+                        <div class="timer-circle">
+                            <svg class="timer-svg" viewBox="0 0 100 100">
+                                <circle class="timer-track" cx="50" cy="50" r="45" fill="none" stroke="#1b263b" stroke-width="8"/>
+                                <circle class="timer-progress" cx="50" cy="50" r="45" fill="none" stroke="#778da9" stroke-width="8" stroke-linecap="round"/>
+                            </svg>
+                            <div class="timer-text">
+                                <span id="timer-minutes">00</span>:<span id="timer-seconds">30</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timer-controls">
+                        <button class="timer-button" id="timer-play-pause">
+                            <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                            </svg>
+                            <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="timer-button secondary" id="timer-reset">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 4V10H7M23 20V14H17M20.49 9A9 9 0 0 0 5.64 5.64L1 10M23 14L18.36 18.36A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="timer-button secondary" id="timer-close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="timer-info">
+                        <p id="timer-title">Descanso entre séries</p>
+                        <p id="timer-subtitle" class="timer-subtitle">Sua última escolha será lembrada</p>
+                        <div class="timer-options" id="timer-options">
+                            <button class="timer-option-btn" data-seconds="30">30s</button>
+                            <button class="timer-option-btn" data-seconds="45">45s</button>
+                            <button class="timer-option-btn" data-seconds="60">1min</button>
+                            <button class="timer-option-btn" data-seconds="90">1min 30s</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+        <!-- Bottom Navigation (for exercise screen) -->
+        <nav class="bottom-nav" id="bottom-nav" style="display: none;">
+            <button class="nav-item" id="nav-workouts">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H20C20.5523 4 21 4.44772 21 5V19C21 19.5523 20.5523 20 20 20H4C3.44772 20 3 19.5523 3 19V5C3 4.44772 3.44772 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M9 9H15M9 13H15M9 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Treinos</span>
+            </button>
+            
+            <button class="nav-item" id="nav-timer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Timer</span>
+            </button>
+            
+            <button class="nav-item" id="nav-export">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 15V19C21 19.5523 20.5523 20 20 20H4C3.44772 20 3 19.5523 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Exportar</span>
+            </button>
+        </nav>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/exercise.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

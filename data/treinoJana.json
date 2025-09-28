@@ -1,0 +1,73 @@
+{
+    "cronograma": {
+        "frequencia": "4x na semana",
+        "semanas": {
+            "todas": {
+                "segunda": "Treino 1/Futevolei",
+                "terça": "Vôlei",
+                "quarta": "Treino 2/ Futevolei",
+                "quinta": "Vôlei",
+                "sexta": "Treino 3",
+                "sábado": "Treino 4 (opcional)",
+                "domingo": "Descanso"
+            }
+        }
+    },
+    "treinos": {
+        "treino_1": {
+            "foco": "Pernas e Joelho (Força + Estabilidade)",
+            "exercicios": [
+                {"nome": "Agachamento no Smith", "series": 3, "reps": 12, "link":"https://media.musclewiki.com/media/uploads/videos/branded/female-Smithmachine-squat-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Smithmachine-squat-side.mp4", "imagem": "data/fotoJana/AgachamentoSmith.png"},
+                {"nome": "Leg Press Unilateral", "series": 3, "reps": "12+12", "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-single-leg-leg-press-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-single-leg-leg-press-side.mp4", "imagem": "data/fotoJana/legPressUni.png"},
+                {"nome": "Cadeira Extensora", "series": 3, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-leg-extension-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-leg-extension-side.mp4", "imagem": "data/fotoJana/extensora.png"},
+                {"nome": "Cadeira Flexora", "series": 3, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-seated-leg-curl-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-seated-leg-curl-side.mp4", "imagem": "data/fotoJana/flexora.png"},
+                {"nome": "Abdutora Máquina", "series": 3, "reps": 15, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-abduction-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-abduction-side.mp4", "imagem": "data/fotoJana/abdutora.png"},
+                {"nome": "Adutora Máquina", "series": 3, "reps": 15, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-side.mp4", "imagem": "data/fotoJana/aducao.png"},
+                {"nome": "Elevação Pélvica", "series": 3, "reps": 15, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-hip-thrust-side.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-hip-thrust-front.mp4", "imagem": "data/fotoJana/elevacaoPelvica.png"},
+                {"nome": "Panturrilha em Pé", "series": 4, "reps": 20, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-calf-raises-side.mp4" ,"link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-calf-raises-front.mp4", "imagem": "data/fotoJana/elevacaoPanturrilha.png"}
+            ]
+        },
+        "treino_2": {
+            "foco": "Superiores + Core (Potência para o Jogo)",
+            "exercicios": [
+                {"nome": "Puxada Alta na Polia (Pegada Aberta)", "series": 4, "reps": 10, "link":"https://media.musclewiki.com/media/uploads/videos/branded/female-machine-pulldown-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-pulldown-side.mp4", "imagem": "data/fotoJana/puxadaMaquina.png"},
+                {"nome": "Remada Curvada com Halteres", "series": 4, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-seated-cable-row-front.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-seated-cable-row-side.mp4", "imagem": "data/fotoJana/remada.png"},
+                {"nome": "Supino Reto (Barra ou Halteres)", "series": 4, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-bench-press-front_9Asgczg.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-bench-press-side_5wGWrBA.mp4", "imagem": "data/fotoJana/supinoComAlteres.png"},
+                {"nome": "Desenvolvimento Militar com Halteres", "series": 3, "reps": 10, "link":"https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-seated-overhead-press-front.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-seated-overhead-press-side.mp4", "imagem": "data/fotoJana/desenvolvimentoHalteres.png"},
+                {"nome": "Elevação Lateral", "series": 3, "reps": 12, "link":"https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-lateral-raise-front.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-lateral-raise-side.mp4", "imagem": "data/fotoJana/elevacaoLateral.png"},
+                {"nome": "Tríceps na Polia", "series": 3, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-push-down-side.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-push-down-front.mp4", "imagem": "data/fotoJana/tricipesPolia.png"},
+                {"nome": "Rosca Direta (Barra ou Halteres)", "series": 3, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-curl-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-curl-side.mp4", "imagem": "data/fotoJana/roscaComHalteres.png"},
+                {"nome": "Prancha Frontal", "series": 3, "tempo": "30s", "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-forearm-plank-front.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-forearm-plank-side.mp4", "imagem": "data/fotoJana/prancha.png"},
+                {"nome": "Graviton", "series": 3, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-assisted-pull-up-side.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-assisted-pull-up-front.mp4", "imagem": "data/fotoJana/graviton.png"},
+                {"nome": "Abdômen Infra", "series": 3, "reps": 15, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-laying-leg-raises-front.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-laying-leg-raises-side.mp4", "imagem": "data/fotoJana/abdominal.png"}
+            ]
+        },
+        "treino_3": {
+            "foco": "Posterior + Explosão (Pulo e Glúteo)",
+            "exercicios": [
+                {"nome": "Stiff Halteres", "series": 3, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-barbell-stiff-leg-deadlift-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-barbell-stiff-leg-deadlift-side.mp4", "imagem": "data/fotoJana/stiff.png"},
+                {"nome": "Levantamento Terra Romeno", "series": 3, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-deadlift-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-deadlift-side.mp4", "imagem": "data/fotoJana/aducao.png"},
+                {"nome": "Hip Thrust Unilateral", "series": 3, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-single-leg-hip-thrust-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-single-leg-hip-thrust-side.mp4", "imagem": "data/fotoJana/elevacaoPelvica.png"},
+                {"nome": "Mesa Flexora Excêntrica", "series": 3, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-hamstring-curl-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-hamstring-curl-side.mp4", "imagem": "data/fotoJana/flexora.png"},
+                {"nome": "Cadeira Flexora", "series": 3, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-seated-leg-curl-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-seated-leg-curl-side.mp4", "imagem": "data/fotoJana/flexora.png"},
+                {"nome": "Saltos Laterais com Step", "series": 3, "reps": "12+12", "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-single-leg-box-jump-side.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-single-leg-box-jump-front.mp4", "imagem": "data/fotoJana/AgachamentoSmith.png"},
+                {"nome": "Agachamento com Salto", "series": 4, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-jump-squats-side.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-jump-squats-front.mp4", "imagem": "data/fotoJana/AgachamentoSmith.png"},
+                {"nome": "Box Jump", "series": 3, "reps": 10, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-box-jump-side.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-box-jump-front.mp4", "imagem": "data/fotoJana/AgachamentoSmith.png"},
+                {"nome": "Panturrilha Sentada", "series": 4, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-standing-calf-raises-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-standing-calf-raises-side.mp4", "imagem": "data/fotoJana/panturrilha.png"}
+            ]
+        }, 
+        "treino_4": {
+            "foco": "Glúteo & Core Estético",
+            "exercicios": [
+                {"nome": "Abdutora Máquina", "series": 3, "reps": 15, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-abduction-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-abduction-side.mp4", "imagem": "data/fotoJana/abdutora.png"},
+                {"nome": "Good Morning (barra leve)", "series": 3, "reps": 12, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-goblet-good-morning-side.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-goblet-good-morning-front.mp4", "imagem": "data/fotoJana/goodmorning.png"},
+                {"nome": "Glute Kickback com Corda", "series": 3, "reps": "12+12", "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-standing-kickback-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-standing-kickback-side.mp4", "imagem": "data/fotoJana/abdutora.png"},
+                {"nome": "Side Plank com Elevação de Quadril", "series": 3, "tempo": "12s", "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-elbow-side-plank-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-elbow-side-plank-side.mp4", "imagem": "data/fotoJana/pranchaLateral.png"},
+                {"nome": "Prancha Frontal", "series": 3, "tempo": "30s", "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-forearm-plank-front.mp4" , "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-forearm-plank-side.mp4", "imagem": "data/fotoJana/prancha.png"},
+                {"nome": "Adutora Máquina", "series": 3, "reps": 15, "link": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-front.mp4", "link2": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-side.mp4", "imagem": "data/fotoJana/aducao.png"}
+
+            ]
+        }
+        }
+    }
+

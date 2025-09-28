@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#0d1b2a"/>
+  
+  <!-- Barbell icon -->
+  <g transform="translate(256,256)">
+    <!-- Left weight plate -->
+    <rect x="-180" y="-60" width="60" height="120" rx="10" fill="#778da9"/>
+    <rect x="-170" y="-50" width="40" height="100" rx="8" fill="#415a77"/>
+    
+    <!-- Left bar connector -->
+    <rect x="-120" y="-15" width="40" height="30" rx="5" fill="#e0e1dd"/>
+    
+    <!-- Center grip -->
+    <rect x="-80" y="-8" width="160" height="16" rx="8" fill="#e0e1dd"/>
+    <rect x="-60" y="-6" width="120" height="12" rx="6" fill="#778da9"/>
+    
+    <!-- Right bar connector -->
+    <rect x="80" y="-15" width="40" height="30" rx="5" fill="#e0e1dd"/>
+    
+    <!-- Right weight plate -->
+    <rect x="120" y="-60" width="60" height="120" rx="10" fill="#778da9"/>
+    <rect x="130" y="-50" width="40" height="100" rx="8" fill="#415a77"/>
+  </g>
+  
+  <!-- App name text -->
+  <text x="256" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="#e0e1dd">TREINO</text>
+  <text x="256" y="440" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#778da9">APP</text>
+</svg>

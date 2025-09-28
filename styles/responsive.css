@@ -1,0 +1,611 @@
+/* ==============================================
+   RESPONSIVE BREAKPOINTS UTILITIES
+   ============================================== */
+
+/* Mobile First Approach - Base styles are mobile */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  /* Layout adjustments for tablets */
+  .app-main {
+    padding-bottom: var(--bottom-nav-height);
+  }
+  
+  .screen-content {
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  /* User selection improvements */
+  .user-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    max-width: 600px;
+  }
+  
+  .user-card {
+    padding: var(--space-10) var(--space-8);
+  }
+  
+  .user-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: var(--font-size-3xl);
+  }
+  
+  /* Workout selection improvements */
+  .workout-tabs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .user-info {
+    padding: var(--space-8);
+  }
+  
+  .current-user-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: var(--font-size-2xl);
+  }
+  
+  /* Exercise screen improvements */
+  .exercise-card {
+    margin-bottom: var(--space-8);
+  }
+  
+  .exercise-header {
+    padding: var(--space-8);
+  }
+  
+  .exercise-progress {
+    padding: var(--space-8);
+  }
+  
+  .exercise-image {
+    height: 300px;
+  }
+  
+  /* Timer modal improvements */
+  .modal-content {
+    max-width: 480px;
+    padding: var(--space-12);
+  }
+  
+  .timer-circle {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .timer-text {
+    font-size: calc(var(--font-size-4xl) * 1.2);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  /* Hide bottom navigation on desktop */
+  .bottom-nav {
+    display: none;
+  }
+  
+  .app-main {
+    padding-bottom: 0;
+  }
+  
+  /* Desktop navigation improvements */
+  .app-header {
+    padding: 0 var(--space-6);
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  
+  /* Content layout improvements */
+  .screen-content {
+    padding: var(--space-12) var(--space-8);
+    max-width: 900px;
+  }
+  
+  /* Exercise screen desktop layout */
+  .exercise-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-8);
+    align-items: start;
+  }
+  
+  .exercise-card {
+    margin-bottom: 0;
+  }
+  
+  .exercise-sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-4));
+  }
+  
+  /* Controls positioning */
+  .exercise-controls {
+    position: static;
+    background: none;
+    border-top: none;
+    padding: var(--space-6) 0;
+    backdrop-filter: none;
+  }
+  
+  /* Video layout for desktop */
+  .exercise-videos.active {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+  
+  .video-container {
+    height: 250px;
+  }
+  
+  /* Series layout improvements */
+  .series-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .screen-content {
+    max-width: 1000px;
+    padding: var(--space-16) var(--space-10);
+  }
+  
+  /* Ultra-wide exercise layout */
+  .exercise-container {
+    grid-template-columns: 1fr 350px;
+    gap: var(--space-12);
+  }
+  
+  .exercise-image {
+    height: 400px;
+  }
+  
+  .video-container {
+    height: 300px;
+  }
+}
+
+/* Extra extra large devices (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .screen-content {
+    max-width: 1200px;
+  }
+}
+
+/* ==============================================
+   ORIENTATION HANDLING
+   ============================================== */
+
+/* Portrait orientation optimizations */
+@media (orientation: portrait) {
+  .exercise-videos.active {
+    flex-direction: column;
+  }
+  
+  .video-container {
+    height: 240px;
+  }
+}
+
+/* Landscape orientation optimizations */
+@media (orientation: landscape) and (max-width: 1024px) {
+  .user-selection-screen .screen-content {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .welcome-section {
+    margin-bottom: var(--space-8);
+  }
+  
+  .welcome-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .user-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .user-card {
+    padding: var(--space-6);
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-size-xl);
+  }
+  
+  /* Exercise screen landscape optimizations */
+  .exercise-image {
+    height: 180px;
+  }
+  
+  .video-container {
+    height: 180px;
+  }
+  
+  .timer-circle {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .timer-text {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* ==============================================
+   DEVICE-SPECIFIC OPTIMIZATIONS
+   ============================================== */
+
+/* iPhone SE and similar small screens */
+@media (max-width: 375px) {
+  .screen-content {
+    padding: var(--space-4) var(--space-3);
+  }
+  
+  .user-card {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-size-xl);
+  }
+  
+  .workout-tab {
+    padding: var(--space-4);
+  }
+  
+  .workout-tab-number {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-base);
+  }
+  
+  .exercise-header {
+    padding: var(--space-4);
+  }
+  
+  .exercise-progress {
+    padding: var(--space-4);
+  }
+  
+  .exercise-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .exercise-header.accordion-header {
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .header-click-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .exercise-status {
+    align-self: flex-end;
+  }
+
+  .complete-exercise-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .timer-circle {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .timer-text {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .modal-content {
+    padding: var(--space-6);
+  }
+}
+
+/* Large phones (iPhone Plus, etc.) */
+@media (min-width: 414px) and (max-width: 767px) {
+  .user-cards {
+    max-width: 450px;
+  }
+  
+  .exercise-image {
+    height: 220px;
+  }
+}
+
+/* iPad and similar tablets in portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .workout-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+  
+  .workout-tab {
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .exercise-videos.active {
+    flex-direction: row;
+  }
+  
+  .video-container {
+    height: 280px;
+  }
+}
+
+/* iPad and similar tablets in landscape */
+@media (min-width: 1024px) and (orientation: landscape) {
+  .exercise-container {
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+/* ==============================================
+   HIGH DPI DISPLAYS
+   ============================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for retina displays */
+  .loader-circle {
+    border-width: 2px;
+  }
+  
+  .timer-track,
+  .timer-progress {
+    stroke-width: 4;
+  }
+}
+
+/* ==============================================
+   PRINT OPTIMIZATIONS
+   ============================================== */
+@media print {
+  .app-header,
+  .bottom-nav,
+  .exercise-controls,
+  .timer-modal,
+  .loading-screen {
+    display: none !important;
+  }
+  
+  .app-main {
+    padding-bottom: 0;
+  }
+  
+  .screen {
+    min-height: auto;
+  }
+  
+  .exercise-card {
+    break-inside: avoid;
+    margin-bottom: var(--space-6);
+  }
+  
+  .exercise-videos {
+    display: none !important;
+  }
+  
+  .exercise-image {
+    height: 200px;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .exercise-card,
+  .user-card,
+  .workout-tab {
+    background: white !important;
+    border-color: #ccc !important;
+  }
+}
+
+/* ==============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================== */
+
+/* Larger touch targets on mobile */
+@media (max-width: 767px) {
+  .series-button,
+  .timer-button-small {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .control-button {
+    min-height: 48px;
+  }
+  
+  .nav-item {
+    min-width: 64px;
+    min-height: 48px;
+  }
+}
+
+/* Focus improvements for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+  .user-card:focus,
+  .workout-tab:focus,
+  .control-button:focus,
+  .series-button:focus {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .exercise-card,
+  .user-card,
+  .workout-tab {
+    border-width: 2px;
+  }
+  
+  .timer-track {
+    stroke-width: 8;
+  }
+  
+  .timer-progress {
+    stroke-width: 8;
+  }
+}
+
+/* ==============================================
+   EXERCISE LIST RESPONSIVE DESIGN
+   ============================================== */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .exercise-content {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .exercise-main-content {
+    order: 2;
+  }
+  
+  .exercise-sidebar {
+    order: 1;
+    flex: none;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+  
+  .videos-container {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .exercise-video {
+    height: 180px;
+  }
+  
+  .muscle-group-image {
+    max-width: 150px;
+  }
+  
+  .series-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .exercise-actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .start-timer-btn,
+  .start-exercise-timer-btn,
+  .complete-exercise-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .exercise-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .exercise-details {
+    flex-direction: column;
+  }
+  
+  .muscle-group-image {
+    max-width: 150px;
+    align-self: center;
+  }
+  
+  .series-item {
+    font-size: 0.8rem;
+  }
+  
+  .weight-section,
+  .series-info {
+    padding: var(--spacing-sm);
+  }
+  
+  .exercise-title {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .exercise-content {
+    gap: var(--spacing-xl);
+  }
+  
+  .exercise-details {
+    max-width: 300px;
+  }
+  
+  .muscle-group-image {
+    max-width: 250px;
+  }
+}
+
+/* Desktop devices */
+@media (min-width: 1025px) {
+  .exercises-list {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .exercise-content {
+    gap: var(--spacing-2xl);
+  }
+  
+  .exercise-details {
+    max-width: 350px;
+  }
+  
+  .muscle-group-image {
+    max-width: 300px;
+  }
+  
+  .exercise-video {
+    max-height: 400px;
+  }
+}
