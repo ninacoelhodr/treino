@@ -129,12 +129,15 @@ class Navigation {
 
   // Update user info display
   updateUserInfo(userId, userData) {
-    const userInitial = AppUtils.$('#current-user-initial');
+    const userIcon = AppUtils.$('#current-user-icon');
     const userName = AppUtils.$('#current-user-name');
     const userSchedule = AppUtils.$('#current-user-schedule');
     
-    if (userInitial) {
-      userInitial.textContent = userId.charAt(0).toUpperCase();
+    if (userIcon) {
+      const iconSrc = userId === 'jana' ? 'icons/mulher.png' : 'icons/academia.png';
+      const altText = userId.charAt(0).toUpperCase() + userId.slice(1);
+      userIcon.src = iconSrc;
+      userIcon.alt = altText;
     }
     
     if (userName) {

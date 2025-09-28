@@ -6,12 +6,17 @@
     <meta name="theme-color" content="#3b82f6">
     <meta name="description" content="App de treino para academia - Acompanhe seus exercícios">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/halteres.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/halteres.png">
+    <link rel="shortcut icon" href="icons/halteres.png">
+    
     <!-- PWA Configuration -->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Treino App">
-    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <link rel="apple-touch-icon" href="icons/halteres.png">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="data/treinoJana.json" as="fetch" crossorigin>
@@ -61,7 +66,7 @@
                     <div class="user-cards">
                         <button class="user-card" data-user="jana">
                             <div class="user-avatar">
-                                <span>J</span>
+                                <img src="icons/mulher.png" alt="Jana" class="user-icon">
                             </div>
                             <h3>Jana</h3>
                             <p>Pernas, Superiores, Posterior & Core</p>
@@ -69,7 +74,7 @@
                         
                         <button class="user-card" data-user="leandro">
                             <div class="user-avatar">
-                                <span>L</span>
+                                <img src="icons/academia.png" alt="Leandro" class="user-icon">
                             </div>
                             <h3>Leandro</h3>
                             <p>Peito, Pernas, Costas & Full Body</p>
@@ -83,7 +88,7 @@
                 <div class="screen-content">
                     <div class="user-info">
                         <div class="current-user-avatar">
-                            <span id="current-user-initial"></span>
+                            <img id="current-user-icon" src="" alt="" class="user-icon">
                         </div>
                         <div class="user-details">
                             <h2 id="current-user-name"></h2>
