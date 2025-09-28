@@ -179,7 +179,7 @@ class ExerciseManager {
         const toggleIcon = exerciseItem.querySelector('.accordion-toggle');
         if (toggleIcon) toggleIcon.innerHTML = '▼';
         
-        // Auto-play first video of first exercise
+        // Auto-play first video of first exercise (only on desktop)
         setTimeout(() => {
           this.autoPlayVideo(0);
         }, 500); // Wait for DOM to be ready
@@ -330,7 +330,8 @@ class ExerciseManager {
         src: exercise.link,
         controls: true,
         preload: 'metadata',
-        muted: true
+        muted: true,
+        playsinline: true // Prevents fullscreen on iOS
       });
       
       video1.onerror = () => {
@@ -359,7 +360,8 @@ class ExerciseManager {
         src: exercise.link2,
         controls: true,
         preload: 'metadata',
-        muted: true
+        muted: true,
+        playsinline: true // Prevents fullscreen on iOS
       });
       
       video2.onerror = () => {
@@ -1222,8 +1224,13 @@ class ExerciseManager {
     });
   }
 
-  // Auto-play both videos when accordion opens
+  // Auto-play both videos when accordion opens (skip only on iOS)
   autoPlayVideo(exerciseIndex) {
+    // Skip auto-play only on iOS devices to prevent fullscreen behavior
+    if (this.isIOSDevice()) {
+      return;
+    }
+    
     setTimeout(() => {
       const exerciseElement = document.querySelector(`[data-exercise-index="${exerciseIndex}"]`);
       if (exerciseElement && !exerciseElement.classList.contains('collapsed')) {
@@ -1235,6 +1242,12 @@ class ExerciseManager {
         });
       }
     }, 300); // Wait for accordion animation
+  }
+
+  // Check if user is on an iOS device (iPhone/iPad)
+  isIOSDevice() {
+    return /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+           (navigator.userAgent.includes('Mac') && navigator.maxTouchPoints > 0);
   }
 
   // Stop video playback for specific exercise
