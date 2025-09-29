@@ -13,10 +13,22 @@
     
     <!-- PWA Configuration -->
     <link rel="manifest" href="manifest.json">
+    
+    <!-- iOS Specific -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Treino App">
+    <meta name="apple-touch-fullscreen" content="yes">
+    
+    <!-- iOS Icons -->
     <link rel="apple-touch-icon" href="icons/halteres.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/halteres.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/halteres.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icons/halteres.png">
+    
+    <!-- iOS Startup Images -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="data/treinoJana.json" as="fetch" crossorigin>
@@ -26,6 +38,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/pwa-install.css">
 </head>
 <body>
     <div class="app-container">
@@ -207,6 +220,7 @@
     <script src="js/timer.js"></script>
     <script src="js/exercise.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/pwa-install.js"></script>
     <script src="js/app.js"></script>
     
     <!-- Service Worker Registration -->

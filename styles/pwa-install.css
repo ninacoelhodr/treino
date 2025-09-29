@@ -1,0 +1,272 @@
+/* PWA Installation Styles */
+
+/* CSS Variables for PWA components */
+:root {
+  --primary-hover: #2563eb;
+}
+
+/* Install Banner (Android/Chrome) */
+.install-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+.install-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.install-banner-icon img {
+  border-radius: 6px;
+  filter: brightness(0) invert(1);
+}
+
+.install-banner-text {
+  flex: 1;
+}
+
+.install-banner-text strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.install-banner-text p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.install-banner-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.install-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.install-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.dismiss-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.dismiss-btn:hover {
+  opacity: 1;
+}
+
+/* iOS Install Modal */
+.ios-install-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.ios-install-content {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.3s ease-out;
+}
+
+.ios-install-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.ios-install-header img {
+  border-radius: 8px;
+}
+
+.ios-install-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+.ios-install-steps {
+  margin-bottom: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  background: var(--primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.step strong {
+  color: var(--text-primary);
+}
+
+.step svg {
+  display: inline;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.got-it-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.got-it-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide install prompts when app is already installed */
+@media (display-mode: standalone) {
+  .install-banner,
+  .ios-install-modal {
+    display: none !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .install-banner-content {
+    padding: 0;
+  }
+  
+  .install-banner-text strong {
+    font-size: 0.9rem;
+  }
+  
+  .install-banner-text p {
+    font-size: 0.8rem;
+  }
+  
+  .ios-install-content {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+}

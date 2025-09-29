@@ -1,19 +1,24 @@
-const CACHE_NAME = 'treino-app-v1.0.0';
+const CACHE_NAME = 'treino-app-v1.0.2';
 const urlsToCache = [
   './',
   './index.html',
   './styles/main.css',
   './styles/components.css', 
   './styles/responsive.css',
+  './styles/pwa-install.css',
   './js/utils.js',
   './js/storage.js',
   './js/timer.js',
   './js/navigation.js',
   './js/exercise.js',
+  './js/pwa-install.js',
   './js/app.js',
   './data/treinoJana.json',
   './data/treinoLeandro.json',
-  './manifest.json'
+  './manifest.json',
+  './icons/halteres.png',
+  './icons/mulher.png',
+  './icons/academia.png'
 ];
 
 // Install event - cache resources
@@ -103,8 +108,8 @@ self.addEventListener('sync', function(event) {
 self.addEventListener('push', function(event) {
   const options = {
     body: event.data ? event.data.text() : 'Hora do treino!',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/icon-72x72.png',
+    icon: './icons/halteres.png',
+    badge: './icons/halteres.png',
     vibrate: [200, 100, 200],
     data: {
       dateOfArrival: Date.now(),
@@ -114,12 +119,12 @@ self.addEventListener('push', function(event) {
       {
         action: 'explore',
         title: 'Iniciar Treino',
-        icon: '/icons/icon-72x72.png'
+        icon: './icons/halteres.png'
       },
       {
         action: 'close',
         title: 'Fechar',
-        icon: '/icons/icon-72x72.png'
+        icon: './icons/halteres.png'
       }
     ]
   };
